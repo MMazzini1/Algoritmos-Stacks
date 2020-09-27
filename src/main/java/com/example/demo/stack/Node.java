@@ -1,4 +1,4 @@
-package com.example.demo.Stack;
+package com.example.demo.stack;
 
 public class Node<T> {
 

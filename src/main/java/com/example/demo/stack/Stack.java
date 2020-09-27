@@ -1,11 +1,14 @@
-package com.example.demo.Stack;
+package com.example.demo.stack;
 
 public class Stack<T> {
 
 
 
+	private static final int DEFAULT_SIZE = 100;
+	private static int MAX_SIZE = DEFAULT_SIZE;
 
-	private static int MAX_SIZE;
+	public Stack() {
+	}
 
 	public Stack(int size) {
 		this.size = size;
@@ -15,7 +18,7 @@ public class Stack<T> {
 	private int size = 0;
 
 
-	public void push(T data) throws StackOverflowException {
+	public void push(T data) {
 		if (size == MAX_SIZE) {
 			throw new StackOverflowException();
 		}
@@ -57,10 +60,10 @@ public class Stack<T> {
 		return size;
 	}
 
-	public static class StackOverflowException extends Exception {
+	public static class StackOverflowException extends RuntimeException{
 	}
 
-	public static class StackUnderflowException extends Exception {
+	public static class StackUnderflowException extends RuntimeException {
 	}
 
 
